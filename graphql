@@ -1,0 +1,22 @@
+awed
+  query{
+  repository(owner:"DaoCasino",name:"BankRollerApp") {
+    refs(first:30, refPrefix:"refs/heads/") {
+      edges {
+        cursor
+        node {
+          name
+          target {
+            ... on Commit {
+              history{
+                totalCount
+              }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
